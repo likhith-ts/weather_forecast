@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'LoginScreen.dart';
-import 'homeScreen.dart';
+import 'pages/LoginScreen.dart';
+import 'pages/homeScreen.dart';
+import '/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+
+Future<void> main() async {
+  // WidgetFlutter.Binding.ensureInitialised();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MainApp());
 }
 
@@ -20,7 +27,7 @@ class _MainAppState extends State<MainApp> {
       initialRoute: '/',
       routes: {
         '/': (context) => LoginScreen(),
-        '/home': (context) => homeScreen(),
+        '/home': (context) => HomeScreen(),
       },
       // home: Scaffold(
       //   body: Center(

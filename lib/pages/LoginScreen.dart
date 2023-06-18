@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:weather_forecast/pages/homeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,19 +15,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final _size = MediaQuery.of(context).size;
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
-            child: Stack(
-          children: [
-            Container(
-              margin: const EdgeInsets.all(20),
-              child: Image(image: image),
-            ),
-            Center(child: Container()),
-          ],
-        )),
-      ),
-    );
+    return Scaffold(
+      body: Container(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
+            );
+          },
+          child: Text('login'),
+          )
+        ),
+      );
   }
 }
