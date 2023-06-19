@@ -29,6 +29,13 @@
             {
               "client_id": "1011402038484-jltg2g7aqej6kjpov4tevribusrjqas4.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1011402038484-sf2js9a20ok98gb5tll2b4mln9efgtvl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.weatherForecast"
+              }
             }
           ]
         }

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:weather_forecast/widget_tree.dart';
 import 'pages/LoginScreen.dart';
 import 'pages/homeScreen.dart';
 import '/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-
+import 'widget_tree.dart';
 
 Future<void> main() async {
-  // WidgetFlutter.Binding.ensureInitialised();
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -24,16 +25,12 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
-      routes: {
-        '/': (context) => LoginScreen(),
-        '/home': (context) => HomeScreen(),
-      },
-      // home: Scaffold(
-      //   body: Center(
-      //     child: Text('Hello World!'),
-      //   ),
-      // ),
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (context) => LoginScreen(),
+      //   '/home': (context) => HomeScreen(),
+      // },
+      home: WidgetTree(),
     );
   }
 }
